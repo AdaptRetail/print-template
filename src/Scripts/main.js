@@ -4,7 +4,24 @@ export default class Template extends AdaptPrintData {
 
     template() {
         return `
-            <h1>Hello world!</h1>
+            <div class="product">
+
+                <div class="grid is-vertical">
+                    <div class="column is-filled">
+                        <div>
+                            <div class="product-image" style="background-image:url( {{ image }} );"></div>
+                            <div class="price">{{ pricenow }}</div>
+                        </div>
+                    </div>
+                    <div class="column is-narrow">
+                        <div class="vendor-logo image" style="background-image: url( {{ vendorlogo }} );"></div>
+                        <div class="name">{{ name }}</div>
+                        <div class="description">{{ description }}</div>
+                        <div class="price__save">Spar {{ pricebefore }}</div>
+                    </div>
+                </div>
+
+            </div>
         `;
     }
 
@@ -19,9 +36,14 @@ export default class Template extends AdaptPrintData {
 
     format( item ) {
         console.log(item);
-        return {
-            image: this.adaptData.asset( item.image ),
-        }
+
+        item.image = this.adaptData.asset( item.image );
+        item.vendorlogo = this.adaptData.asset( item.vendorlogo );
+        item.pricematch = item.pricematch === "1";
+        item.threefortwo = item.threefortwo === "1";
+        item.description = item.descriptionshort;
+
+        return item;
     }
 
     script() {
