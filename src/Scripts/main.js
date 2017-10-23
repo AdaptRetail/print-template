@@ -1,7 +1,17 @@
+// Get the AdaptPrintData class from NODE
 import AdaptPrintData from '@adapt-retail/print-data';
 
+/**
+ * Create the Template class
+ * We will handle the logic if local or in production
+ */
 export default class Template extends AdaptPrintData {
 
+    /**
+     * The template that should be rendered to DOM
+     *
+     * @return String
+     */
     template() {
         return `
             <div class="product">
@@ -25,6 +35,11 @@ export default class Template extends AdaptPrintData {
         `;
     }
 
+    /**
+     * Setup what API data we shall use if we dont find data on DOM
+     *
+     * @return Object
+     */
     getAdaptData() {
         return {
             account: 'priceco58c12436f20b4',
@@ -34,6 +49,11 @@ export default class Template extends AdaptPrintData {
         }
     }
 
+    /**
+     * Format the data we find from Adapt
+     *
+     * @return Object
+     */
     format( item ) {
         console.log(item);
 
@@ -46,18 +66,20 @@ export default class Template extends AdaptPrintData {
         return item;
     }
 
+    /**
+     * Script that should be run after adding each template to DOM
+     *
+     * this.template represents the container
+     *
+     * @return void
+     */
     script() {
         console.log(this.data);
     }
 
 }
 
+/**
+ * After the class has been created we must initialize it to execute our code
+ */
 new Template;
-
-// Prepare adapt data
-// var adaptData = new AdaptData( {
-    // account: 'priceco58c12436f20b4',
-    // project: 1,
-    // campaign: 1,
-    // production: 1,
-// } );
