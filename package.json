@@ -8,15 +8,12 @@
     "prod": "npm run production"
   },
   "dependencies": {
-    "browser-sync": "^2.18.13",
-    "browser-sync-webpack-plugin": "^1.2.0",
-    "gsap": "^1.19.1",
-    "mustache": "^2.3.0",
-    "swipejs": "https://github.com/LasseHaslev/swipe.git"
+    "@adapt-retail/print-data": "git+https://github.com/LasseHaslev/adapt-print-data.git"
   },
   "devDependencies": {
     "@adapt-retail/adapt-mix-extender": "^0.0.1",
-    "@adapt-retail/banner-data": "^0.1.0",
-    "@adapt-retail/banner-style": "^0.0.1"
+    "@adapt-retail/banner-style": "^0.0.1",
+    "browser-sync": "^2.18.13",
+    "browser-sync-webpack-plugin": "^1.2.0"
   }
 }
