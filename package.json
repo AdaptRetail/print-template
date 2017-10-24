@@ -8,11 +8,12 @@
     "prod": "npm run production"
   },
   "dependencies": {
-    "@adapt-retail/print-data": "git+https://github.com/LasseHaslev/adapt-print-data.git"
+    "babel-runtime": "^6.26.0"
   },
   "devDependencies": {
     "@adapt-retail/adapt-mix-extender": "^0.0.1",
     "@adapt-retail/banner-style": "^0.0.1",
+    "babel-plugin-transform-runtime": "^6.23.0",
     "browser-sync": "^2.18.13",
     "browser-sync-webpack-plugin": "^1.2.0"
   }
