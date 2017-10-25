@@ -5,8 +5,11 @@ let mix = require( 'laravel-mix' );
  */
 require( '@adapt-retail/adapt-mix-extender' ).extend( mix );
 
+/**
+ * Add $id before everything when running
+ * npm run prod
+ */
 var buildAdaptMixin = function() {
-    // Add $id before everyting
     if (mix.inProduction()) {
         return `
             @mixin adapt-print {
