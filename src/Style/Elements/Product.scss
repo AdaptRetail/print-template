@@ -1,7 +1,7 @@
 $product-padding: $margin !default;
 $product-name-font-size: $font-size*1.3;
 $product-vendor-height-aspect: 11%;
-$product-vendor-spacing: 3%;
+$product-vendor-spacing: .3em;
 
 /*
  * This file is handling the style of each products in the swipe menu
@@ -19,7 +19,7 @@ $product-vendor-spacing: 3%;
 
     // Added background image
     // The actual background image is set in "src/views/product.template.html"
-    @include background-image;
+    @include background-image( null, bottom );
 
     // Fill parent height
     height: 100%;
