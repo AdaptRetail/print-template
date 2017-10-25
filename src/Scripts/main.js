@@ -55,10 +55,8 @@ export default class Template extends AdaptPrintData {
      * @return Object
      */
     format( item ) {
-        console.log(item);
-
-        item.image = this.adaptData.asset( item.image );
-        item.vendorlogo = this.adaptData.asset( item.vendorlogo );
+        item.image = this.asset( item.image );
+        item.vendorlogo = this.asset( item.vendorlogo );
         item.pricematch = item.pricematch === "1";
         item.threefortwo = item.threefortwo === "1";
         item.description = item.descriptionshort;
