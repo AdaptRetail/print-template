@@ -12,4 +12,9 @@
     @import "../../node_modules/@adapt-retail/banner-style/src/main.scss";
     @import "./Core/_all";
     @import "./Elements/_all.scss";
+
+    /**
+     * Started banner grid
+     */
+    @include banner-grid;
 }

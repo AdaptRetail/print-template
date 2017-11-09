@@ -19,7 +19,7 @@ $product-vendor-spacing: .3em;
 
     // Added background image
     // The actual background image is set in "src/views/product.template.html"
-    @include background-image( null, bottom );
+    @include background-image( null, contain, bottom );
 
     // Fill parent height
     height: 100%;
@@ -29,7 +29,7 @@ $product-vendor-spacing: .3em;
 
     // Added background image but set background-position to left
     // The actual background image is set in "src/views/product.template.html"
-    @include background-image( null, left );
+    @include background-image( null, contain, left );
 
     // You cannot set height of this element to a percentage value cause of the parent height is not set.
     // You need to add padding-bottom. This is cause the padding values
