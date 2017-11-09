@@ -40,6 +40,24 @@ $product-vendor-spacing: .3em;
     margin-bottom: $product-vendor-spacing;
 }
 
+/**
+ * Move the price tag to bottom right
+ */
+.price {
+    position: absolute;
+    bottom: 0;
+    right: 0;
+}
+
+/**
+ * Move the bomb tag to bottom right
+ */
+.bomb {
+    position: absolute;
+    top: 0;
+    left: 0;
+}
+
 .name {
     font-weight: bold;
     font-size: $product-name-font-size;

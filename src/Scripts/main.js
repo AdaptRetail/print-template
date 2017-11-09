@@ -20,7 +20,18 @@ export default class Template extends AdaptPrintData {
                     <div class="column is-filled">
                         <div>
                             <div class="product-image" style="background-image:url( {{ image }} );"></div>
-                            <div class="price">{{ pricenow }}</div>
+
+                            {{#pricematch}}
+                                <div class="bomb is-pricematch"></div>
+                            {{/pricematch}}
+                            {{#threefortwo}}
+                                <div class="bomb is-threefortwo"></div>
+                            {{/threefortwo}}
+
+                            <div class="price">
+                                <div class="price__number price__integer">{{ price.integer }}</div><div class="price__number price__decimal">{{ price.decimal }}</div>
+                            </div>
+
                         </div>
                     </div>
                     <div class="column is-narrow">
@@ -60,6 +71,16 @@ export default class Template extends AdaptPrintData {
         item.pricematch = item.pricematch === "1";
         item.threefortwo = item.threefortwo === "1";
         item.description = item.descriptionshort;
+
+        /**
+         * Split the price now to become array with integer and decimal
+         * If no decimal is found, we set as 00
+         */
+        var tmpPrice = item.pricenow.split( /[,\.]/ );
+        item.price = {
+            integer: tmpPrice[0],
+            decimal: tmpPrice.length >= 2 ? tmpPrice[1] : '00',
+        }
 
         return item;
     }

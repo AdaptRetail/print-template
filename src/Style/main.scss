@@ -1,20 +1,26 @@
-/*
- * Import everything this banner needs
- */
-@import "./Utilities/_all";
-@import "./Mixins/_all";
-
 /**
  * adapt-print is a node generated mixin found in
  * webpack.mix.js
  */
 @include adapt-print {
+
+    /**
+     * Import micro frontednd framework for building templates
+     * https://github.com/AdaptRetail/banner-style
+     */
     @import "../../node_modules/@adapt-retail/banner-style/src/main.scss";
+
+    /*
+     * Import everything this banner needs
+     */
+    @import "./Mixins/_all";
+    @import "./Utilities/_all";
+
     @import "./Core/_all";
     @import "./Elements/_all.scss";
 
     /**
-     * Started banner grid
+     * Started banner grid from micro framework
      */
     @include banner-grid;
 }
