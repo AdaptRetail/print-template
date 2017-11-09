@@ -64,3 +64,21 @@ If you write good responsive banners you almost only need to think about 3 forma
 If you make good banners it does not matter if the banner is `180x500` or `120x480`.
 
 One of the best media queries are [ aspect ratio ](https://developer.mozilla.org/en-US/docs/Web/CSS/Media_Queries/Using_media_queries#aspect-ratio)
+
+## Extracted style
+
+Some of the style of this template has been extracted [to another git repository](https://github.com/AdaptRetail/priceco-style).
+This is to reuse the elements and components in other productions.
+
+This is a recommendation if you are creating multiple templates for [Adapt Retail](https://adaptretail.com).
+
+## Publishing to [Adapt Retail](https://adaptretail.com)
+
+1. Prepare files to [Adapt Retail](https://adaptretail.com) by running `npm run prod` in your terminal.
+1. [Log in to your Adapt retail account](https://app.adaptretail.com/signup_login.php?task=login)
+1. Click on template section in your left navigation bar
+1. Create a new `Snippet`
+1. Set your properties in `Details` tab
+1. Select `Files` tab
+1. Drag `dist/snippet.js` and `dist/snippet.css` to the `dropzone (Drop files or click to upload)` in Adapt
+1. **And you are done!**
