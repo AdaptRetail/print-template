@@ -9,6 +9,7 @@ export default class Template extends AdaptPrintData {
 
     /**
      * The template that should be rendered to DOM
+     * We uses mustache syntax to render the template
      *
      * @return String
      */
@@ -47,7 +48,7 @@ export default class Template extends AdaptPrintData {
     }
 
     /**
-     * Setup what API data we shall use if we dont find data on DOM
+     * Setup what API data we use if we are on local development
      *
      * @return Object
      */
@@ -61,7 +62,7 @@ export default class Template extends AdaptPrintData {
     }
 
     /**
-     * Format the data we find from Adapt
+     * Format the data we get from Adapt
      *
      * @return Object
      */
@@ -86,9 +87,9 @@ export default class Template extends AdaptPrintData {
     }
 
     /**
-     * Script that should be run after adding each template to DOM
+     * Script that runs after template is rendered to DOM
      *
-     * this.template represents the container
+     * this.template represents the element containing the template
      *
      * @return void
      */
