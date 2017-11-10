@@ -6,8 +6,7 @@
 $google-font-name: "Roboto" !default;
 @include google-font( $google-font-name );
 
-$font-family: $google-font-name, sans-serif !default;
-$font-size: 3.5vw !default;
+$font-family: $google-font-name, sans-serif !default; $font-size: 3.5vw !default;
 $font-color: black !default;
 
 /**
@@ -35,17 +34,18 @@ $product-vendor-spacing: .3em;
 
     // You need to set height to make children also fill height
     height: 100%;
+
+    &-image {
+
+        // Added background image
+        // The actual background image is set in "src/views/product.template.html"
+        @include background-image( null, contain, bottom );
+
+        // Fill parent height
+        height: 100%;
+    }
 }
 
-.product-image {
-
-    // Added background image
-    // The actual background image is set in "src/views/product.template.html"
-    @include background-image( null, contain, bottom );
-
-    // Fill parent height
-    height: 100%;
-}
 
 .vendor-logo {
 
@@ -69,7 +69,6 @@ $product-vendor-spacing: .3em;
     position: absolute;
     bottom: 0;
     right: 0;
-    font-size: 5.4em;
 }
 
 /**
@@ -82,6 +81,9 @@ $product-vendor-spacing: .3em;
     font-size: .85em;
 }
 
+/**
+ * Product name
+ */
 .name {
     font-weight: bold;
     font-size: $product-name-font-size;
