@@ -9,6 +9,7 @@
 - [Usage](#usage)
     - [npm run watch](#npm-run-watch)
     - [npm run prod](#npm-run-prod)
+    - [Template class](#template-class)
 - [Extracted style](#extracted-style)
 - [Projects dependencies](#projects-dependencies)
 - [Publishing to Adapt Retail](#publishing-to-adapt-retail)
@@ -42,6 +43,87 @@ This represents a snippet element after it has been implemented to a production.
 ### `npm run prod`
 The `npm run prod` command is minifying css and javascript and removes source maps.
 It will also add `$id` before every class or id in css. Adapt Retail replaces that into each snippet element.
+
+<a name="template-class"></a>
+### Template class
+
+`src/Scripts/main.js`
+
+```js
+// Get the AdaptPrintData class from NODE
+import AdaptPrintData from '@adapt-retail/print-data';
+
+/**
+ * Create the Template class
+ * We will handle the logic if local or in production
+ */
+export default class Template extends AdaptPrintData {
+
+    /**
+     * The template that should be rendered to DOM
+     * We uses mustache syntax to render the variables to template
+     *
+     * @return String
+     */
+    template() {
+        return `
+            <div class="product">
+                <img src="{{ image }}">
+                <h1>{{ name }}</h1>
+            </div>
+        `;
+    }
+
+    /**
+     * Setup what API data we use if we are on local development
+     *
+     * @return Object
+     */
+    getAdaptData() {
+        return {
+            account: 'priceco58c12436f20b4',
+            project: 1,
+            campaign: 1,
+            production: 1,
+        }
+    }
+
+    /**
+     * Format the data we get from Adapt
+     *
+     * @return Object
+     */
+    format( item ) {
+        return {
+            name: item.name,
+            image: this.asset( item.image ),
+        }
+    }
+
+    /**
+     * Script that runs after template is rendered to DOM
+     *
+     * this.template represents the element containing the template
+     *
+     * @return void
+     */
+    script() {
+        console.log(this.data);
+    }
+
+}
+
+/**
+ * After the class has been created we must initialize it to execute our code
+ */
+new Template;
+```
+
+<a name="style"></a>
+## Style
+
+This template uses `sass` for styling.
+Check out the `src/Style/main.css` file, and see where it takes you.
 
 <a name="extracted-style"></a>
 ## Extracted style

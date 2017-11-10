@@ -9,7 +9,7 @@ export default class Template extends AdaptPrintData {
 
     /**
      * The template that should be rendered to DOM
-     * We uses mustache syntax to render the template
+     * We uses mustache syntax to render the variables to template
      *
      * @return String
      */
