@@ -2,7 +2,6 @@
  * Font settings
  */
 // Import the google font
-// Replaces the spaces in $google-font-name to "+" so it can be found by google
 $google-font-name: "Roboto" !default;
 @include google-font( $google-font-name );
 
@@ -13,9 +12,9 @@ $font-color: black !default;
  * Product
  */
 $product-padding: 0 !default;
-$product-name-font-size: 1.3em;
-$product-vendor-height-aspect: 11%;
-$product-vendor-spacing: .3em;
+$product-name-font-size: 1.3em !default;
+$product-vendor-height-aspect: 11% !default;
+$product-vendor-spacing: .3em !default;
 
 /*
  * This file is handling the style of each products in the swipe menu
@@ -35,6 +34,9 @@ $product-vendor-spacing: .3em;
     // You need to set height to make children also fill height
     height: 100%;
 
+    /**
+     * .product-image
+     */
     &-image {
 
         // Added background image
@@ -46,11 +48,13 @@ $product-vendor-spacing: .3em;
     }
 }
 
-
+/**
+ * Style for the vendor logo
+ */
 .vendor-logo {
 
-    // Added background image but set background-position to left
-    // The actual background image is set in "src/views/product.template.html"
+    // Added background image but set background-position to fit inside the frame
+    // Set the position to the left if it not filling the width
     @include background-image( null, contain, left );
 
     // You cannot set height of this element to a percentage value cause of the parent height is not set.

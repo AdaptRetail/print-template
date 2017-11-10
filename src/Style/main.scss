@@ -1,4 +1,3 @@
-
 /**
  * Import micro frontednd framework for building templates
  * https://github.com/AdaptRetail/banner-style
@@ -20,14 +19,11 @@
  */
 @include adapt-print {
 
-    /*
-     * Import elements
-     */
     @import "./Core/_all";
     @import "./Elements/_all.scss";
 
     /**
-     * Added banner grid from micro framework
+     * Added banner grid from @adapt-retail/banner-style
      */
     @include banner-grid;
 }
