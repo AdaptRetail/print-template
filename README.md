@@ -144,12 +144,12 @@ This is a recommendation if you are creating multiple templates for [Adapt Retai
 <a name="publishing-to-adapt-retail"></a>
 ## Publishing to [Adapt Retail](https://adaptretail.com)
 
-1. Prepare files to [Adapt Retail](https://adaptretail.com) by running `npm run prod` in your terminal.
 1. [Log in to your Adapt retail account](https://app.adaptretail.com/signup_login.php?task=login)
 1. Click on template section in your left navigation bar
 1. Create a new `Banner template`
 1. Set your properties in `Details` tab
 1. Select `Files` tab
+1. Prepare files to [Adapt Retail](https://adaptretail.com) by running `npm run prod` in your terminal.
 1. Drag `dist/snippet.js` and `dist/snippet.css` to the `dropzone (Drop files or click to upload)` in Adapt
 1. **And you are done!**
 
