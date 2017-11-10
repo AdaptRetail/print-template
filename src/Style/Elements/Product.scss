@@ -1,5 +1,20 @@
+/**
+ * Font settings
+ */
+// Import the google font
+// Replaces the spaces in $google-font-name to "+" so it can be found by google
+$google-font-name: "Roboto" !default;
+@include google-font( $google-font-name );
+
+$font-family: $google-font-name, sans-serif !default;
+$font-size: 3.5vw !default;
+$font-color: black !default;
+
+/**
+ * Product
+ */
 $product-padding: 0 !default;
-$product-name-font-size: $font-size*1.3;
+$product-name-font-size: 1.3em;
 $product-vendor-height-aspect: 11%;
 $product-vendor-spacing: .3em;
 
@@ -7,6 +22,13 @@ $product-vendor-spacing: .3em;
  * This file is handling the style of each products in the swipe menu
  */
 .product {
+
+    /**
+     * Set prouct default font settings
+     */
+    font-family: $font-family;
+    color: $font-color;
+    font-size: $font-size;
 
     // Add spacing from the edge
     padding: $product-padding;
@@ -47,6 +69,7 @@ $product-vendor-spacing: .3em;
     position: absolute;
     bottom: 0;
     right: 0;
+    font-size: 5.4em;
 }
 
 /**
@@ -56,6 +79,7 @@ $product-vendor-spacing: .3em;
     position: absolute;
     top: 0;
     left: 0;
+    font-size: .85em;
 }
 
 .name {
