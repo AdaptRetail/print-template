@@ -14,8 +14,12 @@ $font-family: $google-font-name, sans-serif !default;
 $font-size: 3.5vw !default;
 $font-color: black !default;
 
-// Append the settings to html element
-html, body {
+/**
+ * We are setting the font-family to the first element accessible
+ * Cause in Adapt we cannot alter the html or body tag.
+ * In production this will be replaced with "$id > *"
+ */
+> * {
     font-family: $font-family;
     color: $font-color;
     font-size: $font-size;
