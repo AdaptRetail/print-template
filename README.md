@@ -13,7 +13,7 @@
 - [Extracted style](#extracted-style)
 - [Projects dependencies](#projects-dependencies)
 - [Publishing to Adapt Retail](#publishing-to-adapt-retail)
-- [License](#license)
+<!-- - [License](#license) -->
 
 <a name="install"></a>
 ## Install
@@ -153,7 +153,5 @@ This is a recommendation if you are creating multiple templates for [Adapt Retai
 1. Drag `dist/snippet.js` and `dist/snippet.css` to the `dropzone (Drop files or click to upload)` in Adapt
 1. **And you are done!**
 
-<a name="license"></a>
-## License
-
-This project is MIT licensed.
+<!-- <a name="license"></a> -->
+<!-- ## License -->
