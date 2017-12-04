@@ -7,9 +7,9 @@
 
 - [Install](#install)
 - [Usage](#usage)
-    - [npm run watch](#npm-run-watch)
-    - [npm run prod](#npm-run-prod)
-    - [Template class](#template-class)
+    - [Local development](#npm-run-watch)
+    - [Prepare files for production](#npm-run-prod)
+    - [Files](#files)
 - [Extracted style](#extracted-style)
 - [Projects dependencies](#projects-dependencies)
 - [Publishing to Adapt Retail](#publishing-to-adapt-retail)
@@ -32,22 +32,47 @@ npm install
 <a name="usage"></a>
 ## Usage
 
-<a name="npm-run-watch"></a>
-### `npm run watch`
-You can see the snippet when working on it simply by writing `npm run watch`.
-This will start [Browser Sync](https://www.browsersync.io/) and will display your content, and refresh your browsers every time you save a file.
+> All dependencies must be [installed](#install) before you can start using the template.
 
-This represents a snippet element after it has been implemented to a production.
+This template is using `npm`, `Sass` and `Webpack` to build your files and containing [some extra helpers](#dependencies) to make things easier for you.
+
+<a name="npm-run-watch"></a>
+### Build in local environment
+
+```bash
+# Open file in default browser (browser-sync) and
+# auto refresh browser on file save
+npm run watch
+```
+> You can also display your production on other devices on your local network.
+> Check your terminal for information after running `npm run watch`.
 
 <a name="npm-run-prod"></a>
-### `npm run prod`
-The `npm run prod` command is minifying css and javascript and removes source maps.
-It will also add `$id` before every class or id in css. Adapt Retail replaces that into each snippet element.
+### Prepare files for production
 
-<a name="template-class"></a>
-### Template class
+```bash
+# Compile files to dist/ folder
+npm run prod
+```
 
-`src/Scripts/main.js`
+The `npm run prod` command is compiling and minifying the css and javascript.
+All your files will be compiled to the `dist/` folder.
+
+<a name="files"></a>
+### Files
+
+All your production files will be found in the `src/` folder.
+
+We have provided the files with some content, but
+this is your files and we don't tell you what you do. 
+This is our approach when we are creating productions, 
+and you may add, move and remove files however you want.
+
+> All files are thoroughly commented, so if you're in doubt, just read the source. 
+
+#### [`src/Script/main.js`](https://github.com/AdaptRetail/print-template/blob/master/src/Scripts/main.js)
+
+This file 
 
 ```js
 // Get the AdaptPrintData class from NODE
@@ -120,10 +145,70 @@ new Template;
 ```
 
 <a name="style"></a>
-## Style
+#### [`src/Style/main.scss`](https://github.com/AdaptRetail/print-template/blob/master/src/Style/main.scss)
 
-This template uses `sass` for styling.
-Check out the `src/Style/main.css` file, and see where it takes you.
+This is the main Sass file.
+This file is including all the other sass files.
+Do whatever you want from here.
+
+We have set up some logic to get you started. Browse through the files and see what each file does.
+If you want to overwrite some variables you can do it in [`src/Style/Utilities/Variables.scss`](https://github.com/AdaptRetail/print-template/blob/master/src/Style/Utilities/Variables.scss).
+
+> Most of the files are containing variables you can over write in this file.
+> Just add the variable here, and it will be overwritten.
+> Try `$google-font-name: "Lobster";`
+
+<a name="dependencies"></a>
+## Dependencies
+
+This project is using different dependencies to make it easier to make display banners.
+
+<a name="banner-style"></a>
+### [Banner style](https://github.com/AdaptRetail/banner-style)
+
+Micro frontend framework containing helpers like `grid` system using flex.
+
+<a name="sass-asset-inline"></a>
+### [sass-asset-inline](https://github.com/LasseHaslev/sass-asset-inliner)
+
+Inline assets like `image` and `fonts` in your sass files with simple syntax.
+
+```scss
+@font-face {
+    src: inline-font( 'path/to/your/font.ttf' ); // Include full font
+
+    // Subset font by adding regex as second parameter
+    // of each character you want to include
+    src: inline-font( 'path/to/your/font.ttf', '[0-9]' );
+}
+
+body {
+    // Inline image
+    background-image: inline-image( 'path/to/your/image.png' );
+
+    // Inline and resize image to width (Kepp aspect ratio)
+    background-image: inline-image( 'path/to/your/image.png', "200" );
+
+    // Resize image and ignoring aspect ratio
+    background-image: inline-image( 'path/to/your/image.png', "200x400" );
+
+    // Resize image to height and keep aspect ratio
+    background-image: inline-image( 'path/to/your/image.png', "_x400" );
+
+    // Underscore works also for height.
+    // ("200x_" equals "200" as shown above)
+}
+```
+
+> All files are included from your root folder.
+
+### [Adapt Data](https://github.com/AdaptRetail/banner-data)
+
+Communicate with Adapt Retail productions through our API.
+
+### [laravel-mix](https://github.com/JeffreyWay/laravel-mix)
+
+We are extending [laravel-mix](https://github.com/JeffreyWay/laravel-mix) with [Laravel mix extender](https://github.com/AdaptRetail/adapt-mix-extender) to include helpers like the [sass-asset-inline](#sass-asset-inline)
 
 <a name="extracted-style"></a>
 ## Extracted style
@@ -133,25 +218,14 @@ This is to reuse the elements and components in other productions.
 
 This is a recommendation if you are creating multiple templates for [Adapt Retail](https://adaptretail.com).
 
-<a name="projects-dependencies"></a>
-## Projects dependencies
-- [@adapt-retail/banner-style](https://github.com/AdaptRetail/banner-style)
-    - [@lassehaslev/sass-asset-inline](https://github.com/LasseHaslev/sass-asset-inliner)
-- [@adapt-retail/print-data](https://github.com/AdaptRetail/print-data)
-- [laravel-mix](https://github.com/JeffreyWay/laravel-mix)
-    - [@adapt-retail/adapt-mix-extender](https://github.com/AdaptRetail/adapt-mix-extender)
-
-<a name="publishing-to-adapt-retail"></a>
+<a name="publish"></a>
 ## Publishing to [Adapt Retail](https://adaptretail.com)
 
 1. [Log in to your Adapt retail account](https://app.adaptretail.com/signup_login.php?task=login)
 1. Click on template section in your left navigation bar
-1. Create a new `Banner template`
+1. Create a new `Outline` template
 1. Set your properties in `Details` tab
 1. Select `Files` tab
 1. Prepare files to [Adapt Retail](https://adaptretail.com) by running `npm run prod` in your terminal.
-1. Drag `dist/snippet.js` and `dist/snippet.css` to the `dropzone (Drop files or click to upload)` in Adapt
+1. Drag `dist/ad.js` and `dist/ad.css` to the `dropzone (Drop files or click to upload)` in Adapt
 1. **And you are done!**
-
-<!-- <a name="license"></a> -->
-<!-- ## License -->
