@@ -13,7 +13,7 @@
 - [Extracted style](#extracted-style)
 - [Projects dependencies](#projects-dependencies)
 - [Publishing to Adapt Retail](#publishing-to-adapt-retail)
-<!-- - [License](#license) -->
+- [License](#license)
 
 <a name="install"></a>
 ## Install
@@ -229,3 +229,11 @@ This is a recommendation if you are creating multiple templates for [Adapt Retai
 1. Prepare files to [Adapt Retail](https://adaptretail.com) by running `npm run prod` in your terminal.
 1. Drag `dist/ad.js` and `dist/ad.css` to the `dropzone (Drop files or click to upload)` in Adapt
 1. **And you are done!**
+
+<a name="license"></a>
+## License
+
+This template heavely dependent on [GSAP animation framework](https://greensock.com/gsap), and they are subject to [their own license](http://greensock.com/standard-license).
+Read their license to make sure you are on the safe side on how you use this template.
+
+The code provided in this template is available for usage by all clients of [Adapt Retail](https://adaptretail.com).
