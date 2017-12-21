@@ -39,6 +39,8 @@ This template is using `npm`, `Sass` and `Webpack` to build your files and conta
 <a name="npm-run-watch"></a>
 ### Build in local environment
 
+> When getting product data from Adapt Make sure you reference to a Adapt Data Collection.
+
 ```bash
 # Open file in default browser (browser-sync) and
 # auto refresh browser on file save
