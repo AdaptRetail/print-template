@@ -60,6 +60,18 @@ npm run prod
 The `npm run prod` command is compiling and minifying the css and javascript.
 All your files will be compiled to the `dist/` folder.
 
+<a name="prepare-adapt-data"></a>
+### Prepare Adapt Retail data for development
+
+To prepare data from [Adapt Retail](https://adaptretail.com) for development you need to create a new `Collection` production.
+
+The `collection` needs one product and a snippet with all attributes to include from Adapt.
+
+Publish the `collection` and get the product, campaign and production ids from the `url` and add them to the `getAdaptData` function.
+
+> If you only want to use the preview data, remember to set `preview: true`, in the `getAdaptData` function.
+
+
 <a name="files"></a>
 ### Files
 
