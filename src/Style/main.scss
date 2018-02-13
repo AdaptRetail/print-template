@@ -1,8 +1,14 @@
 /**
- * Import micro frontednd framework for building templates
+ * Import micro frontend framework for building templates
  * https://github.com/AdaptRetail/banner-style
  */
 @import "../../node_modules/@adapt-retail/banner-style/src/main.scss";
+
+/**
+ * Import extracted priceco style
+ * https://github.com/AdaptRetail/priceco-style
+ */
+@import "../../node_modules/@priceco/style/src/main.scss";
 
 /*
  * Import utilities
