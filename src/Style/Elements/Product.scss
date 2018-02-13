@@ -5,7 +5,8 @@
 $google-font-name: "Roboto" !default;
 @include google-font( $google-font-name );
 
-$font-family: $google-font-name, sans-serif !default; $font-size: 3.5vw !default;
+$font-family: $google-font-name, sans-serif !default;
+$font-size: 11pt !default;
 $font-color: black !default;
 
 /**
