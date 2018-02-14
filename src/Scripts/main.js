@@ -58,6 +58,7 @@ export default class Template extends AdaptPrintData {
             project: 1,
             campaign: 1,
             production: 1,
+            preview: false, // Should we use preview data from Adapt
         }
     }
 
