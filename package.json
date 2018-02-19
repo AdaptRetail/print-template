@@ -9,7 +9,7 @@
   },
   "dependencies": {
     "@adapt-retail/adapt-mix-extender": "^1.0.1",
-    "@adapt-retail/print-data": "0.0.2",
+    "@adapt-retail/print-data": "^1.0.0",
     "@priceco/style": "git+https://github.com/AdaptRetail/priceco-style.git"
   },
   "devDependencies": {
